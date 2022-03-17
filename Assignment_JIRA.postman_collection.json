@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "e994d032-31cf-4ac7-b5fb-02731204ee0f",
+		"name": "Assignment_JIRA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllJiraIssues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restapijira.atlassian.net/rest/api/2/search?jql=project=AP&maxResults=15",
+					"protocol": "https",
+					"host": [
+						"restapijira",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project=AP"
+						},
+						{
+							"key": "maxResults",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllIssues24hours",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restapijira.atlassian.net/rest/api/2/search?jql=project=AP%26created>=-24h",
+					"protocol": "https",
+					"host": [
+						"restapijira",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project=AP%26created>=-24h"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetAllIssues24hours",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restapijira.atlassian.net/rest/api/2/search?jql=project=AP%26created>=-24h",
+							"protocol": "https",
+							"host": [
+								"restapijira",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"search"
+							],
+							"query": [
+								{
+									"key": "jql",
+									"value": "project=AP%26created>=-24h"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "AtlassianProxy/1.19.3.1"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache, no-store, no-transform"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=315360000; includeSubDomains; preload"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 15:24:52 GMT"
+						},
+						{
+							"key": "ATL-TraceId",
+							"value": "49dbd2dd80a32757"
+						},
+						{
+							"key": "x-arequestid",
+							"value": "80e94a9a-d68d-4ec9-baca-59950fa71ef3"
+						},
+						{
+							"key": "x-aaccountid",
+							"value": "622da2ff1dcf800070e7a411"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "timing-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "x-envoy-upstream-service-time",
+							"value": "303"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "report-uri=\"https://web-security-reports.services.atlassian.com/expect-ct-report/global-proxy\", enforce, max-age=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"expand\": \"names,schema\",\n    \"startAt\": 0,\n    \"maxResults\": 50,\n    \"total\": 1,\n    \"issues\": [\n        {\n            \"expand\": \"operations,versionedRepresentations,editmeta,changelog,customfield_10010.requestTypePractice,renderedFields\",\n            \"id\": \"10105\",\n            \"self\": \"https://restapijira.atlassian.net/rest/api/2/issue/10105\",\n            \"key\": \"AP-106\",\n            \"fields\": {\n                \"statuscategorychangedate\": \"2022-03-17T20:50:01.060+0530\",\n                \"issuetype\": {\n                    \"self\": \"https://restapijira.atlassian.net/rest/api/2/issuetype/10004\",\n                    \"id\": \"10004\",\n                    \"description\": \"A problem or error.\",\n                    \"iconUrl\": \"https://restapijira.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium\",\n                    \"name\": \"Bug\",\n                    \"subtask\": false,\n                    \"avatarId\": 10303,\n                    \"hierarchyLevel\": 0\n                },\n                \"timespent\": null,\n                \"project\": {\n                    \"self\": \"https://restapijira.atlassian.net/rest/api/2/project/10000\",\n                    \"id\": \"10000\",\n                    \"key\": \"AP\",\n                    \"name\": \"APIMAR\",\n                    \"projectTypeKey\": \"software\",\n                    \"simplified\": false,\n                    \"avatarUrls\": {\n                        \"48x48\": \"https://restapijira.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405\",\n                        \"24x24\": \"https://restapijira.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=small\",\n                        \"16x16\": \"https://restapijira.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=xsmall\",\n                        \"32x32\": \"https://restapijira.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=medium\"\n                    }\n                },\n                \"fixVersions\": [],\n                \"aggregatetimespent\": null,\n                \"resolution\": null,\n                \"resolutiondate\": null,\n                \"workratio\": -1,\n                \"watches\": {\n                    \"self\": \"https://restapijira.atlassian.net/rest/api/2/issue/AP-106/watchers\",\n                    \"watchCount\": 1,\n                    \"isWatching\": true\n                },\n                \"lastViewed\": null,\n                \"created\": \"2022-03-17T20:50:00.683+0530\",\n                \"customfield_10020\": null,\n                \"customfield_10021\": null,\n                \"customfield_10022\": null,\n                \"customfield_10023\": null,\n                \"priority\": {\n                    \"self\": \"https://restapijira.atlassian.net/rest/api/2/priority/3\",\n                    \"iconUrl\": \"https://restapijira.atlassian.net/images/icons/priorities/medium.svg\",\n                    \"name\": \"Medium\",\n                    \"id\": \"3\"\n                },\n                \"customfield_10024\": null,\n                \"customfield_10025\": null,\n                \"labels\": [],\n                \"customfield_10016\": null,\n                \"customfield_10017\": null,\n                \"customfield_10018\": {\n                    \"hasEpicLinkFieldDependency\": false,\n                    \"showField\": false,\n                    \"nonEditableReason\": {\n                        \"reason\": \"PLUGIN_LICENSE_ERROR\",\n                        \"message\": \"The Parent Link is only available to Jira Premium users.\"\n                    }\n                },\n                \"customfield_10019\": \"0|i000n3:\",\n                \"timeestimate\": null,\n                \"aggregatetimeoriginalestimate\": null,\n                \"versions\": [],\n                \"issuelinks\": [],\n                \"assignee\": null,\n                \"updated\": \"2022-03-17T20:50:00.683+0530\",\n                \"status\": {\n                    \"self\": \"https://restapijira.atlassian.net/rest/api/2/status/10000\",\n                    \"description\": \"\",\n                    \"iconUrl\": \"https://restapijira.atlassian.net/\",\n                    \"name\": \"To Do\",\n                    \"id\": \"10000\",\n                    \"statusCategory\": {\n                        \"self\": \"https://restapijira.atlassian.net/rest/api/2/statuscategory/2\",\n                        \"id\": 2,\n                        \"key\": \"new\",\n                        \"colorName\": \"blue-gray\",\n                        \"name\": \"To Do\"\n                    }\n                },\n                \"components\": [],\n                \"timeoriginalestimate\": null,\n                \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\n                \"customfield_10010\": null,\n                \"customfield_10014\": null,\n                \"customfield_10015\": null,\n                \"customfield_10005\": null,\n                \"customfield_10006\": null,\n                \"security\": null,\n                \"customfield_10007\": null,\n                \"customfield_10008\": null,\n                \"customfield_10009\": null,\n                \"aggregatetimeestimate\": null,\n                \"summary\": \"create issue in RA Project\",\n                \"creator\": {\n                    \"self\": \"https://restapijira.atlassian.net/rest/api/2/user?accountId=622da2ff1dcf800070e7a411\",\n                    \"accountId\": \"622da2ff1dcf800070e7a411\",\n                    \"emailAddress\": \"restapijira@gmail.com\",\n                    \"avatarUrls\": {\n                        \"48x48\": \"https://secure.gravatar.com/avatar/c307347d2625b37fd7225d8e8296aed7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-3.png\",\n                        \"24x24\": \"https://secure.gravatar.com/avatar/c307347d2625b37fd7225d8e8296aed7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-3.png\",\n                        \"16x16\": \"https://secure.gravatar.com/avatar/c307347d2625b37fd7225d8e8296aed7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-3.png\",\n                        \"32x32\": \"https://secure.gravatar.com/avatar/c307347d2625b37fd7225d8e8296aed7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-3.png\"\n                    },\n                    \"displayName\": \"RestAPIJira\",\n                    \"active\": true,\n                    \"timeZone\": \"Asia/Calcutta\",\n                    \"accountType\": \"atlassian\"\n                },\n                \"subtasks\": [],\n                \"reporter\": {\n                    \"self\": \"https://restapijira.atlassian.net/rest/api/2/user?accountId=622da2ff1dcf800070e7a411\",\n                    \"accountId\": \"622da2ff1dcf800070e7a411\",\n                    \"emailAddress\": \"restapijira@gmail.com\",\n                    \"avatarUrls\": {\n                        \"48x48\": \"https://secure.gravatar.com/avatar/c307347d2625b37fd7225d8e8296aed7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-3.png\",\n                        \"24x24\": \"https://secure.gravatar.com/avatar/c307347d2625b37fd7225d8e8296aed7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-3.png\",\n                        \"16x16\": \"https://secure.gravatar.com/avatar/c307347d2625b37fd7225d8e8296aed7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-3.png\",\n                        \"32x32\": \"https://secure.gravatar.com/avatar/c307347d2625b37fd7225d8e8296aed7?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FR-3.png\"\n                    },\n                    \"displayName\": \"RestAPIJira\",\n                    \"active\": true,\n                    \"timeZone\": \"Asia/Calcutta\",\n                    \"accountType\": \"atlassian\"\n                },\n                \"customfield_10000\": \"{}\",\n                \"aggregateprogress\": {\n                    \"progress\": 0,\n                    \"total\": 0\n                },\n                \"customfield_10001\": null,\n                \"customfield_10002\": null,\n                \"customfield_10003\": null,\n                \"customfield_10004\": null,\n                \"environment\": null,\n                \"duedate\": null,\n                \"progress\": {\n                    \"progress\": 0,\n                    \"total\": 0\n                },\n                \"votes\": {\n                    \"self\": \"https://restapijira.atlassian.net/rest/api/2/issue/AP-106/votes\",\n                    \"votes\": 0,\n                    \"hasVoted\": false\n                }\n            }\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "9Eu8M9bNE8GKmLP3zEAb3C7D",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "RestAPIJira@gmail.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
